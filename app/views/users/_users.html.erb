@@ -1,0 +1,35 @@
+<h2>User info</h2>
+<!--% get_profile_image(100,100) %-->
+<!--@userイメージ入れたい-->
+<table>
+  <tbody>
+    <tr>
+      <th>name</th>
+      <!--th>%= @user.neme %></th-->
+    </tr>
+    <tr>
+      <th>introduction</th>
+      <!--th>%= @user.comment %></th-->
+    </tr>
+  </tbody>
+
+  <div>
+    <%= link_to edit_user_path %>
+  </div>
+
+  <h2>New book</h2>
+
+  <div>
+    <label>Titel</label>
+    <%= f.text_filed %>
+  </div>
+
+  <div>
+    <label>Opinion</label>
+    <%= f.text_area %>
+  </div>
+
+  <div>
+    <%= f.submit "Create Book" %>
+  </div>
+</table>
