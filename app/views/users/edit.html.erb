@@ -1,5 +1,14 @@
 <h2>User info</h2>
 
-<%= f.file_field :image, accept: "image/*" %>
+<%= form_with model: @user do |f| %>
+  <label for="inoutName">Name</label>
+  <%= f.text_filed :name, autofocus: true, id:"inputName"%>
 
-<%= f.submit 'Update User' %>
+  <label for="inputImage">Image</label>
+  <%= f.file_field :profile_image, accept: "image/*" %>
+
+  <label for="inputIntroduction">Introduction</label>
+  <%= f.text_filed :Introduction %>
+
+  <%= f.submit 'Update User' %>
+<% end %>
