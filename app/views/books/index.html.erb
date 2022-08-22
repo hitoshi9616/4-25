@@ -11,9 +11,17 @@
       </tr>
     </thead>
 
-    <!--% @books.each do |book| %-->
+    <% @books.each do |book| %>
     <tbody>
-
+      <tr>
+        <th>
+          <%= image_tag user.get_profile_image(100,100) %>
+          <%= book.user.name %>
+        </th>
+        <th><%= book.titel %></th>
+        <th><%= book.opinion %></th>
+        <th></th>
+      </tr>
     </tbody>
   </table>
 </div>

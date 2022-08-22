@@ -1,35 +1,33 @@
 <h2>User info</h2>
-<!--% get_profile_image(100,100) %-->
-<!--@userイメージ入れたい-->
+
 <table>
   <tbody>
+    <% user.each do |user| %>
+
+    <% image_tag user.get_profile_image(100,100) %>
+
     <tr>
       <th>name</th>
-      <!--th>%= @user.neme %></th-->
+      <th><%= current_user.name %></th>
     </tr>
     <tr>
       <th>introduction</th>
-      <!--th>%= @user.comment %></th-->
+      <th><%= current_user.introduction %></th>
     </tr>
   </tbody>
 
   <div>
-    <%= link_to , edit_user_path(@user.id) %>
+    <%= link_to , edit_user_path(current_user.id) %>
   </div>
 
   <h2>New book</h2>
+    <%= form_with model: book do |f| %>
 
-  <div>
     <label>Titel</label>
-    <%= f.text_filed %>
-  </div>
+    <%= f.text_filed :titel %>
 
-  <div>
     <label>Opinion</label>
-    <%= f.text_area %>
-  </div>
+    <%= f.text_area :opinion %>
 
-  <div>
     <%= f.submit "Create Book" %>
-  </div>
 </table>
