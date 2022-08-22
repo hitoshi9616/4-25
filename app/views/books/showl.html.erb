@@ -17,6 +17,16 @@
       <td>
         <%= @book.opinion %>
       </td>
+      <td>
+        <% if @book.user == current_user %>
+          <%= link_to "Edit", edit_path(book.id) %>
+        <% end %>
+      </td>
+      <td>
+        <% if @book.user == current_user %>
+          <%= link_to "Destroy" book_path(@book.id), method: :detail %>
+        <% end %>
+      </td>
     </tr>
   </tbody>
 </table>

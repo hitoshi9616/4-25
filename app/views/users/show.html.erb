@@ -1,1 +1,27 @@
 <!--ユーザー詳細-->
+<div>
+  <h2>Books</h2>
+
+  <table>
+    <thead>
+      <tr>
+        <th></th>
+        <th>Title</th>
+        <th>Opinion</th>
+        <th></th>
+      </tr>
+    </thead>
+
+    <% @books.each do |book| %>
+    <tbody>
+      <tr>
+        <th>
+        <th><%= image_tag book.user.get_profile_image(100,100) %></th>
+        <th><%= link_to book_path(book.id), book.titel %></th>
+        <th><%= book.opinion %></th>
+        <th></th>
+      </tr>
+    </tbody>
+    <% end %>
+  </table>
+</div>
