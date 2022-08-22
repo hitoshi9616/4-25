@@ -5,10 +5,14 @@
     <tr>
       <td>
         <%= image_tag @book.get_profile_image %>
-        <%= @book.user.name %>
+        <%= link_to user_path(user.id) do %>
+          <%= @book.user.name %>
+        <% end %>
       </td>
       <td>
-        <%= @book.titel %>
+        <%= link_to book_path(book.id) do %>
+          <%= @book.titel %>
+        <% end %>
       </td>
       <td>
         <%= @book.opinion %>
