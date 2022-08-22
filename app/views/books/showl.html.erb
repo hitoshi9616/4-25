@@ -1,1 +1,18 @@
-<h2>Book details</h2>
+<h2>Book detail</h2>
+
+<table>
+  <tbody>
+    <tr>
+      <td>
+        <%= image_tag @book.get_profile_image %>
+        <%= @book.user.name %>
+      </td>
+      <td>
+        <%= @book.titel %>
+      </td>
+      <td>
+        <%= @book.opinion %>
+      </td>
+    </tr>
+  </tbody>
+</table>
