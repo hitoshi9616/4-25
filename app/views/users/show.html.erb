@@ -17,7 +17,7 @@
       <tr>
         <th>
         <th><%= image_tag book.user.get_profile_image(100,100) %></th>
-        <th><%= link_to book_path(book.id), book.titel %></th>
+        <th><%= link_to 'book.titel', book_path(book.id) %></th>
         <th><%= book.opinion %></th>
         <th></th>
       </tr>
