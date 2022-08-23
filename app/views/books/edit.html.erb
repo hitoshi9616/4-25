@@ -1,20 +1,30 @@
-<h2>Editing Book</h2>
+<div class="container">
+  <div class="row">
+    <div class="col-sm-12 col-md-8 col-lg-5 px-5 px-sm-0 mx-auto">
+      <h1>Editing Book</h1>
 
-<%= form_with model: @book do |f| %>
-
-  <div>
-      <label>Titel</label>
-      <%= f.text_filed :titel%>
+      <div class="form-group">
+        <%= form_with model: @book do |f| %>
+          <div class="form-control">
+            <label>Titel</label>
+            <%= f.text_filed :titel%>
+          </div>
+          <div class="form-control">
+            <label for="inputImage">Image</label>
+            <%= f.file_field :profile_image, accept: "image/*" %>
+          </div>
+          <div class="form-control">
+            <label>Opinion</label>
+            <%= f.text_area :opinion%>
+          </div>
+          <div class="form-control">
+            <%= f.submit 'Update Book' %>
+          </div>
+        <% end %>
+        <%= link_to "Show" book_path(book.id) %>
+        <%= "|" %>
+        <%= link_to "Back" books_path %>
+      </div>
+    </div>
   </div>
-  <div>
-      <label>Opinion</label>
-      <%= f.text_area :opinion%>
-  </div>
-  <div>
-      <%= f.submit "Update Book" %>
-  </div>
- <% end %>
-
- <%= link_to "Show" book_path(book.id) %>
- "|"
- <%= link_to "Back" books_path %>
+</div>
