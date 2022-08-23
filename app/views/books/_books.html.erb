@@ -1,25 +1,25 @@
 <div class="col-md3">
   <h2>User info</h2>
 
-  <%= image_tag @user.get_profile_image(100,100) %>
+  <%= image_tag user.get_profile_image(100,100) %>
 
   <table>
     <tbody>
       <tr>
         <th>name</th>
-        <th><%= @user.name %></th>
+        <th><%= user.name %></th>
       </tr>
       <tr>
         <th>introduction</th>
-        <th><%= @user.introduction %></th>
+        <th><%= user.introduction %></th>
       </tr>
   </tbody>
 
   <div class="row">
-    <% if @user == current_user %>
-      <%= link_to edit_user_path(@user.id) %>
+    <% if user == current_user %>
+      <%= link_to edit_user_path(user.id) %>
     <% else %>
-      <%= link_to user_path(@user.id) %>
+      <%= link_to user_path(user.id) %>
     <% end %>
   </div>
 
@@ -29,11 +29,11 @@
 
       <div class="form-control">
         <label>Titel</label>
-        <%= f.text_filed :titel %>
+        <%= f.text_field :Titel %>
       </div>
       <div class="form-control">
         <label>Opinion</label>
-        <%= f.text_area :opinion %>
+        <%= f.text_area :Opinion %>
       </div>
       <div class="form-control">
         <%= f.submit "Create Book" %>
