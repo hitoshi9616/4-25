@@ -1,27 +1,35 @@
-<h2>User info</h2>
+<div class="col-md3">
+  <h2>User info</h2>
 
-<table>
-  <tbody>
-    <% user.each do |user| %>
+  <% image_tag user.get_profile_image(100,100) %>
 
-    <% image_tag user.get_profile_image(100,100) %>
-
-    <tr>
-      <th>name</th>
-      <th><%= current_user.name %></th>
-    </tr>
-    <tr>
-      <th>introduction</th>
-      <th><%= current_user.introduction %></th>
-    </tr>
-  <% end %>
+  <table>
+    <tbody>
+      <% user.each do |user| %>
+      <tr>
+        <th>name</th>
+        <th><%= current_user.name %></th>
+      </tr>
+      <tr>
+        <th>introduction</th>
+        <th><%= current_user.introduction %></th>
+      </tr>
+    <% end %>
   </tbody>
 
   <div>
-    <!-- if使ってcurrent_userでリンク先変える-->
-    <%= link_to , edit_user_path(current_user.id) %>
+    <% if @user == current_user %>
+      <%= link_to edit_user_path(user.id) %>
+    <% else %>
+      <%= link_to user_path(user.id) %>
+    <% end %>
   </div>
 
+  <div class="container">
+    <div class="">
+      
+    </div>
+  </div>
   <h2>New book</h2>
   <%= form_with model: book do |f| %>
 
@@ -33,4 +41,6 @@
 
     <%= f.submit "Create Book" %>
   <% end %>
-</table>
+  </table>
+  
+</div>
