@@ -7,13 +7,13 @@
         <tbody>
           <tr>
             <td>
-              <%= link_to 'user_path(user.id)' do %>
+              <%= link_to user_path(@user.id) do %>
                 <%= image_tag @user.get_profile_image(100,100) %><br>
                 <%= @user.name %>
               <% end %>
             </td>
             <td>
-              <%= link_to 'book_path(book.id)' do %>
+              <%= link_to do %>
                 <%= @book.title %>
               <% end %>
             </td>
